@@ -1,7 +1,7 @@
 class Place < ActiveRecord::Base
   belongs_to :user
-  has_many :comments, dependent: :destroy
-  has_many :photos, through: :comments, dependent: :destroy
+  has_many :comments
+  has_many :photos
   
   validates :name, length: { minimum: 3 }, presence: true
   validates :address, presence: true
